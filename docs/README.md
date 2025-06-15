@@ -1,81 +1,135 @@
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ficu71/FRPForge-Web/main/docs/banner.png" alt="FRPForge Web" width="600"/>
+</p>
 
 # FRPForge Web
 
-**PL 🇵🇱 – Edukacyjne narzędzie do demonstracji bypassu Factory Reset Protection (FRP)**  
-**ENG 🇬🇧 – Educational tool to demonstrate Android FRP bypass**
+## 🇵🇱 Wersja Polska
 
----
+**FRPForge Web** to edukacyjne narzędzie do demonstracji omijania blokady FRP (Factory Reset Protection) na urządzeniach z Androidem – za pomocą przeglądarki z obsługą WebUSB.  
+🔐 **Wyłącznie do celów edukacyjnych** — kompatybilność z Android 12–15 oraz wsparcie dla producentów: Samsung, Xiaomi, Huawei, Oppo.
 
-## 🇵🇱 Opis projektu
+### 🔍 Czym jest FRP?
 
-**FRPForge Web** to przeglądarkowe narzędzie edukacyjne do demonstracji jak działają techniki ominięcia blokady FRP na Androidzie. Obsługuje najnowsze wersje systemu (Android 12–15) oraz wielu producentów (Samsung, Xiaomi, Huawei, Oppo).
+Factory Reset Protection (FRP) to zabezpieczenie wprowadzone przez Google od Androida 5.1, które chroni telefon po przywróceniu ustawień fabrycznych.  
+FRPForge Web pokazuje, jak działają techniki bypassu – legalnie, do nauki, bez ryzyka.
 
-- WebUSB + Flask backend
-- Obsługa ADB, Fastboot, TWRP
-- Dynamiczna konfiguracja vendorów (`config.json`)
-- Tryb demonstracyjny bez fizycznego urządzenia
-- Chart.js, WebSocket logi, pełne testy jednostkowe
+### ⚙️ Funkcje
 
-## 🛠 Wymagania
+- ✅ Edukacyjny symulator FRP  
+- 🌐 Interfejs WebUSB + wykresy w Chart.js  
+- 🔧 Backend Python Flask z ADB, Fastboot, TWRP  
+- 📡 Logi w czasie rzeczywistym przez WebSocket  
+- 🧪 Tryb demo (bez podłączonego urządzenia)  
+- 🔁 Konfigurowalne kroki przez `config.json`
 
-- Python 3.8+
-- Node.js (do http-server)
-- Google Chrome (z WebUSB aktywne)
-- ADB, Fastboot zainstalowane lokalnie
+### 📦 Wymagania
 
-## 🔧 Uruchomienie
+- Python 3.8+  
+- Node.js (frontend)  
+- ADB i Fastboot zainstalowane w systemie  
+- Chrome z włączoną flagą WebUSB (`chrome://flags/#enable-webusb`)
 
-```bash
-# Backend
+### 🧪 Jak uruchomić
+
+**Backend:**
+
+```
 cd backend
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # lub venv\Scripts\activate na Windows
 pip install -r requirements.txt
 python app.py
+```
 
+**Frontend:**
 
+```
+cd frontend
+npx http-server -p 8080
+# Otwórz http://localhost:8080 w Chrome
+```
 
-# FRPForge Web
+### 🛠 Tryb Demo
 
-**Educational tool for demonstrating Factory Reset Protection (FRP) bypass on Android devices**  
-🧪 For **educational use only** — supports Android 12, 13, 14, 15 and major vendors like Samsung, Xiaomi, Huawei, Oppo.
+Kliknij „Tryb Demo” w interfejsie i zobacz symulację bypassu dla wybranego producenta – bez fizycznego telefonu.
 
----
+### ⚠️ Ostrzeżenie Prawne
 
-## 🧠 What is FRP?
+> **Ten projekt służy wyłącznie do celów edukacyjnych i testowych.**  
+> Nie używaj go na urządzeniach, które nie należą do Ciebie.  
+> Omijanie FRP na cudzych urządzeniach jest nielegalne.
 
-Factory Reset Protection (FRP) is a security feature on Android introduced in version 5.1 to prevent unauthorized access after a factory reset. FRPForge Web simulates and demonstrates how certain bypass methods work — legally and for learning purposes.
+### 👤 Autor
 
----
-
-## 🚀 Features
-
-- 🧠 Educational simulation of FRP bypass
-- 🌐 Browser-based frontend (WebUSB + Chart.js)
-- 🧰 Backend in Python Flask with ADB/Fastboot/TWRP support
-- 📡 Real-time logs via WebSocket
-- 🧪 Demo mode (no physical device required)
-- 📦 Easily extendable vendor system via `config.json`
-
----
-
-## 📦 Requirements
-
-- Python 3.8+
-- Node.js (for static frontend hosting)
-- ADB and Fastboot installed on your system
-- Google Chrome (with WebUSB enabled at `chrome://flags/#enable-webusb`)
+**FICU71**  
+[https://github.com/ficu71](https://github.com/ficu71)
 
 ---
 
-## ⚙️ How to Run
+## 🇬🇧 English Version
 
-### Backend
+**FRPForge Web** is an educational tool for demonstrating Android Factory Reset Protection (FRP) bypass through a browser-based WebUSB interface.  
+🔐 **For educational use only** — supports Android 12–15 and major vendors: Samsung, Xiaomi, Huawei, Oppo.
 
-```bash
+### 🔍 What is FRP?
+
+Factory Reset Protection (FRP) is a Google security feature introduced in Android 5.1 to block unauthorized access after a factory reset.  
+FRPForge Web safely simulates bypass methods — for learning, testing, and legal use.
+
+### ⚙️ Features
+
+- ✅ Educational FRP bypass simulator  
+- 🌐 Browser interface with WebUSB + Chart.js  
+- 🔧 Python Flask backend with ADB, Fastboot, TWRP support  
+- 📡 Real-time logs via WebSocket  
+- 🧪 Demo mode (no physical device needed)  
+- 🔁 Easily extendable via `config.json`
+
+### 📦 Requirements
+
+- Python 3.8+  
+- Node.js (for frontend hosting)  
+- ADB and Fastboot installed  
+- Google Chrome with WebUSB enabled (`chrome://flags/#enable-webusb`)
+
+### 🧪 How to Run
+
+**Backend:**
+
+```
 cd backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 python app.py
+```
+
+**Frontend:**
+
+```
+cd frontend
+npx http-server -p 8080
+# then open http://localhost:8080 in Chrome
+```
+
+### 🛠 Demo Mode
+
+Use “Demo Mode” to simulate a bypass without a phone. Choose a vendor and see the steps displayed in real-time.
+
+### ⚠️ Legal Notice
+
+> **This tool is for educational and testing purposes only.**  
+> Do not use it on devices you do not own.  
+> FRP bypass on stolen/unauthorized devices is illegal.
+
+### 👤 Author
+
+**FICU71**  
+[https://github.com/ficu71](https://github.com/ficu71)
+
+---
+
+<p align="center">
+  🔓 Open-source • MIT License • Wiedza to potęga / Knowledge is Power
+</p>
