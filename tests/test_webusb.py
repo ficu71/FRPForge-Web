@@ -1,5 +1,5 @@
 import unittest
-from utils.webusb import WebUSBHandler
+from backend.utils.webusb import WebUSBHandler  # Zaktualizowana ścieżka importu
 
 class TestWebUSB(unittest.TestCase):
     def test_get_devices(self):
