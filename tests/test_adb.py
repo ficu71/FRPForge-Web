@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from utils.adb import ADB
+from backend.utils.adb import ADB  # Zaktualizowana ścieżka importu
 
 class TestADB(unittest.TestCase):
     @patch('subprocess.run')
