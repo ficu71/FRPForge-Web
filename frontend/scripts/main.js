@@ -1,3 +1,5 @@
+// async function runBypass() { ... } // Zakomentuj
+
 const API_URL = 'http://localhost:5000/api';
 const socket = io('http://localhost:5000');
 
