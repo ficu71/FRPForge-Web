@@ -1,2 +1,32 @@
 <!DOCTYPE html>
-<html><head><title>FRPForge Web</title></head><body></body></html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRPForge Web - Edukacyjne Narzędzie do Bypassu FRP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>FRPForge Web - Edukacyjne Narzędzie do Bypassu FRP</h1>
+        <div class="controls">
+            <select id="vendor-select">
+                <option value="">Wybierz Producenta</option>
+            </select>
+            <button id="scan-devices">Skanuj Urządzenia</button>
+            <button id="run-bypass">Uruchom Bypass</button>
+            <button id="demo-mode">Tryb Demo</button>
+            <button id="flash-twrp">Flashuj TWRP</button>
+            <button id="accessibility-exploit">Exploit Accessibility</button>
+        </div>
+        <div id="device-list"></div>
+        <div id="log-output"></div>
+        <canvas id="progress-chart" style="max-width: 600px; margin-top: 20px;"></canvas>
+    </div>
+    <script src="scripts/webusb.js"></script>
+    <script src="scripts/demo.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
