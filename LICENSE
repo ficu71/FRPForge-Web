@@ -1,1 +1,38 @@
-MIT License
+#### **docs/FRP_EXPLAINED.md**
+```markdown
+# Zrozumienie Factory Reset Protection (FRP)
+
+## Czym jest FRP?
+FRP to funkcja zabezpieczająca wprowadzona przez Google w Androidzie 5.1 (Lollipop), zapobiegająca nieautoryzowanemu dostępowi do urządzenia po resecie fabrycznym. Wymaga podania danych logowania do oryginalnego konta Google podczas konfiguracji po resecie.
+
+## Jak działa FRP?
+1. Konto Google jest powiązane z urządzeniem.
+2. Po resecie fabrycznym urządzenie wymaga danych logowania do konta.
+3. Bez tych danych urządzenie pozostaje zablokowane.
+
+## Dlaczego omijać FRP?
+- **Legalne użycie**: Odzyskiwanie dostępu do urządzenia z zapomnianymi danymi logowania lub zakupionego z drugiej ręki.
+- **Edukacyjne użycie**: Zrozumienie mechanizmów bezpieczeństwa Androida.
+
+## Techniki bypassu
+- **Samsung**: Tryb testowy (*#0*#), exploity przeglądarki, exploity Knox, TWRP.
+- **Xiaomi**: Tryb recovery, wyłączenie konta MI, tryb EDL, TWRP.
+- **Huawei**: Fastboot, tryb EDL, exploity HiSuite.
+- **Oppo**: Tryb EDL, flashowanie QFIL, exploity Accessibility.
+
+## Nowe wersje Androida (12-15)
+- **Android 12**: Ograniczony kreator konfiguracji, ograniczenia intencji.
+- **Android 13**: Zablokowane pakiety systemowe, zaszyfrowana partycja FRP.
+- **Android 14**: Dynamiczne partycje, ograniczenia ADB.
+- **Android 15**: Wzmocnione szyfrowanie FRP, ograniczenia Fastboot/EDL.
+
+## Ryzyka
+- Utrata danych, uszkodzenie urządzenia lub konsekwencje prawne przy niewłaściwym użyciu.
+- Używaj tylko w celach edukacyjnych lub na urządzeniach, których jesteś właścicielem.
+
+## Komendy
+- **ADB**:
+  ```bash
+  adb devices
+  adb shell pm install /path/to/frp_bypass.apk
+  adb reboot
