@@ -1,3 +1,33 @@
 {
-  "samsung": {}
+    "samsung": {
+        "steps": [
+            {"step": "Włącz tryb testowy", "command": "dial *#0*#"},
+            {"step": "Otwórz przeglądarkę", "command": "am start -a android.intent.action.VIEW -d http://google.com"},
+            {"step": "Prześlij APK bypassu FRP", "command": "push /path/to/frp_bypass.apk /sdcard/"},
+            {"step": "Zainstaluj APK bypassu FRP", "command": "pm install /sdcard/frp_bypass.apk"},
+            {"step": "Restart urządzenia", "command": "reboot"}
+        ]
+    },
+    "xiaomi": {
+        "steps": [
+            {"step": "Wejdź w tryb recovery", "command": "reboot recovery"},
+            {"step": "Wyłącz konto MI", "command": "pm disable-user com.xiaomi.account"},
+            {"step": "Wyczyść partycję FRP", "command": "fastboot erase frp"},
+            {"step": "Restart urządzenia", "command": "reboot"}
+        ]
+    },
+    "huawei": {
+        "steps": [
+            {"step": "Wejdź w tryb fastboot", "command": "reboot bootloader"},
+            {"step": "Wyczyść partycję FRP", "command": "fastboot erase frp"},
+            {"step": "Restart urządzenia", "command": "fastboot reboot"}
+        ]
+    },
+    "oppo": {
+        "steps": [
+            {"step": "Wejdź w tryb EDL", "command": "reboot edl"},
+            {"step": "Flashowanie bypassu FRP", "command": "qfil flash frp_bypass_script"},
+            {"step": "Restart urządzenia", "command": "reboot"}
+        ]
+    }
 }
