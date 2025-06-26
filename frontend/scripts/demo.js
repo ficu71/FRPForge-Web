@@ -1,13 +1,12 @@
 async function runDemoMode(vendor) {
     try {
-        const response = await fetch(`${API_URL}/demo/${vendor}`);
-        const data = await response.json();
-        if (data.status === 'success') {
-            displaySteps(data.steps);
-            displayProgressChart(data.steps);
-        } else {
-            logMessage(`Błąd w trybie demo: ${data.message}`);
-        }
+        const steps = [
+            { step: "Symulacja kroku 1", status: "success", output: "Zakończono" },
+            { step: "Symulacja kroku 2", status: "success", output: "Zakończono" }
+        ];
+        displaySteps(steps);
+        displayProgressChart(steps);
+        logMessage(`Tryb demo dla ${vendor} uruchomiony lokalnie`);
     } catch (error) {
         logMessage(`Błąd w trybie demo: ${error}`);
     }
