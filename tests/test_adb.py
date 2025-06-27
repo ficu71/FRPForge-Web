@@ -1,4 +1,5 @@
 import unittest
+import subprocess
 from unittest.mock import patch
 from backend.utils.adb import ADB  # Zaktualizowana ścieżka importu
 
