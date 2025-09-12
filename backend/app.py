@@ -4,6 +4,7 @@ from flask_socketio import SocketIO
 from vendors.loader import VendorLoader
 from utils.twrp import TWRP
 from utils.webusb import WebUSBHandler
+from utils.adb import ADB
 import logging
 
 app = Flask(__name__)

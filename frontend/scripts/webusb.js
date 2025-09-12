@@ -28,10 +28,18 @@ class WebUSB {
         const devices = await this.getDevices();
         const device = devices.find(d => d.id === deviceId);
         if (!device) throw new Error('Urządzenie nie znalezione');
-        await device.open();
-        await device.selectConfiguration(1);
-        await device.claimInterface(0);
-        console.log(`Połączono z ${deviceId}`);
+        if (device.open) {
+            await device.open();
+            if (device.selectConfiguration) {
+                await device.selectConfiguration(1);
+            }
+            if (device.claimInterface) {
+                await device.claimInterface(0);
+            }
+            console.log(`Połączono z ${deviceId}`);
+        } else {
+            console.warn(`Device ${deviceId} does not support WebUSB connection`);
+        }
         return device;
     }
 

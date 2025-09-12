@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 from vendors.base import BaseBypass
 from utils.adb import ADB
 from utils.fastboot import Fastboot
@@ -6,7 +7,9 @@ import time
 
 class VendorLoader:
     @staticmethod
-    def load_vendors(config_path="backend/vendors/config.json"):
+    def load_vendors(config_path=None):
+        if config_path is None:
+            config_path = Path(__file__).with_name('config.json')
         with open(config_path, 'r') as f:
             return json.load(f)
 

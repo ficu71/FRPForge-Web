@@ -1,7 +1,7 @@
 // async function runBypass() { ... } // Zakomentuj
 
-const API_URL = 'http://localhost:5000/api';
-const socket = io('http://localhost:5000');
+const API_URL = `${window.location.origin}/api`;
+const socket = io(window.location.origin);
 
 socket.on('log', data => {
     logMessage(`[WebSocket] ${data.message}`);
